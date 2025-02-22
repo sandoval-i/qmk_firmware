@@ -8,13 +8,6 @@
 #define _RAISE 2
 #define _ADJUST 3
 
-/* enum custom_keycodes {
-  QWERTY = SAFE_RANGE,
-  LOWER,
-  RAISE,
-  ADJUST,
-}; */
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_QWERTY] = LAYOUT(
@@ -75,35 +68,5 @@ KC_CAPS_LOCK, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B, LT(_RAISE, KC_HOME),LT(_
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  /* switch (keycode) {
-    case QWERTY:
-      if (record->event.pressed) {
-        set_single_persistent_default_layer(_QWERTY);
-      }
-      return false;
-    case LOWER:
-      if (record->event.pressed) {
-        layer_on(_LOWER);
-      } else {
-        layer_off(_LOWER);
-      }
-      return false;
-    case RAISE:
-      if (record->event.pressed) {
-        layer_on(_RAISE);
-        update_tri_layer(_LOWER, _RAISE, _ADJUST);
-      } else {
-        layer_off(_RAISE);
-        update_tri_layer(_LOWER, _RAISE, _ADJUST);
-      }
-      return false;
-    case ADJUST:
-      if (record->event.pressed) {
-        layer_on(_ADJUST);
-      } else {
-        layer_off(_ADJUST);
-      }
-      return false;
-  } */
   return true;
 }
